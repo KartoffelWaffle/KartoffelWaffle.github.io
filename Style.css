@@ -2,3 +2,8 @@
   margin: 0;
   background-color: #3B3B3B;
 }
+
+.img 
+{
+  background: url("joe.png");
+}
