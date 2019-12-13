@@ -13,6 +13,7 @@
 
 html, body {
   height: 100%;
+  width: 100%;
 }
 
 body {
@@ -40,8 +41,8 @@ background-color: #F1F3F6;
 
 .phone-screen {
   position: relative;
-  top: 10px;
-  left: 4px;
+  top: 1.5%;
+  left: 1.5%;
   width: 96%;
   height: 97%;
   box-shadow: inset -30px -2px 30px rgba(64, 82, 128, 0.2), inset 30px 2px 30px rgba(255, 255, 255, 0.8);
@@ -50,26 +51,51 @@ background-color: #F1F3F6;
   background-color: #F1F3F6;
 }
 
+.picture {
+  position: relative;
+  left: 25%;
+  top: 10%;
+  height: 150px;
+  max-width: 150px;
+  background: url(../img/Me.png) center center;
+  border-radius: 50%;
+  filter: drop-shadow(80px 60px 50px rgba(107, 127, 153, 0.5));
+}
+
+p {
+  position: relative;
+  left: 10%;
+  top: 20%;
+
+}
+
 .spacer {
   grid-area: spacer;
+  border: 1px solid black;
 }
 
 .spacer-left {
   grid-area: spacer-left;
+  width: 50%;
+  height: 50%;
+  background-color: pink;
+  border: 1px solid pink;
 }
 
 .header {
   grid-area: header;
+  border: 1px solid red;
 }
 
 .footer {
   grid-area: footer;
+  border: 1px solid green;
 }
 
 .grid-container {
   display: grid;
-  grid-template-columns: auto 316.8px auto;
-  grid-template-rows: auto 712.8px auto;
+  grid-template-columns: 20% 18% 20%;
+  grid-template-rows:  20% 78% 20%;
   grid-template-areas:
     'header header header'
     'spacer-left phone spacer'
@@ -77,4 +103,31 @@ background-color: #F1F3F6;
   height: 100%;
   align-items: center;
   justify-content: center;
+}
+
+@media screen and (max-height: 800px) {
+  .grid-container {
+    display: grid;
+    grid-template-columns: auto 712.8px auto;
+    grid-template-rows: auto 316.8px auto;
+    grid-template-areas:
+      'header header header'
+      'spacer-left phone spacer'
+      'footer footer footer';
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .phone-screen {
+    position: relative;
+    top: 6px;
+    left: 10px;
+    width: 97%;
+    height: 96%;
+    box-shadow: inset -30px -2px 30px rgba(64, 82, 128, 0.2), inset 30px 2px 30px rgba(255, 255, 255, 0.8);
+    border: 0.5px solid rgba(10, 10, 10, 0.2);
+    border-radius: 37px;
+    background-color: #F1F3F6;
+  }
 }
