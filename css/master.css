@@ -1,3 +1,6 @@
+var h = screen.height;
+var w = screen.width;
+
 * {
   margin: 0;
   font-family: Calibri, Arial;
@@ -41,8 +44,8 @@ background-color: #F1F3F6;
 
 .phone-screen {
   position: relative;
-  top: 1.5%;
-  left: 1.5%;
+  top: 10px;
+  left: 4px;
   width: 96%;
   height: 97%;
   box-shadow: inset -30px -2px 30px rgba(64, 82, 128, 0.2), inset 30px 2px 30px rgba(255, 255, 255, 0.8);
@@ -94,8 +97,8 @@ p {
 
 .grid-container {
   display: grid;
-  grid-template-columns: 20% 18% 20%;
-  grid-template-rows:  20% 78% 20%;
+  grid-template-columns: auto 316.8px auto;;
+  grid-template-rows: auto 712.8px auto;;
   grid-template-areas:
     'header header header'
     'spacer-left phone spacer'
@@ -108,8 +111,8 @@ p {
 @media screen and (max-height: 800px) {
   .grid-container {
     display: grid;
-    grid-template-columns: auto 712.8px auto;
-    grid-template-rows: auto 316.8px auto;
+    grid-template-columns: auto 534.6px auto;
+    grid-template-rows:  auto 237.6px auto;
     grid-template-areas:
       'header header header'
       'spacer-left phone spacer'
