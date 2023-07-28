@@ -7,6 +7,7 @@ let date = new Date();
 let hours = date.getHours();
 let minutes = date.getMinutes();
 let seconds = date.getSeconds();
+let mSeconds = date.getMilliseconds();
 let ticks = 0;
 
 if(date.getHours() > 12)
@@ -22,12 +23,13 @@ function update()
 {
   requestAnimationFrame(update);
 
-  if(ticks === 60)
+  if(ticks === 10)
   {
     date = new Date();
     hours = date.getHours();
     minutes = date.getMinutes();
     seconds = date.getSeconds();
+    mSeconds = date.getMilliseconds();
     reDraw();
     ticks = 0;
   }
@@ -46,9 +48,10 @@ function draw(time, deg, color, radius)
 function reDraw()
 {
   context.clearRect(0, 0, canvas.width, canvas.height);
-  draw(seconds, ((180 / Math.PI)), 'red', 200);
-  draw(minutes, ((180 / Math.PI)), 'green', 250);
-  draw(hours, ((180 / Math.PI)), 'blue', 300);
+  draw(mSeconds, (180 / Math.PI), '#FFFFFF', 150);
+  draw(seconds, (180 / Math.PI), '#BDD9BF', 200);
+  draw(minutes, (180 / Math.PI), '#FFC857', 250);
+  draw(hours, (180 / Math.PI), '#2E4052', 300);
 }
 
 update();
