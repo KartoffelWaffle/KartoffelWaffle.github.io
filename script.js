@@ -7,7 +7,6 @@ let date = new Date();
 let hours = date.getHours();
 let minutes = date.getMinutes();
 let seconds = date.getSeconds();
-let mSeconds = date.getMilliseconds();
 let ticks = 0;
 
 if(date.getHours() > 12)
@@ -23,17 +22,15 @@ function update()
 {
   requestAnimationFrame(update);
 
-  if(ticks === 60)
-  {
-    date = new Date();
-    hours = date.getHours();
-    minutes = date.getMinutes();
-    seconds = date.getSeconds();
-    mSeconds = date.getMilliseconds();
-    reDraw();
-    ticks = 0;
-  }
-  ticks++;
+    if(ticks === 60) {
+      date = new Date();
+      hours = date.getHours();
+      minutes = date.getMinutes();
+      seconds = date.getSeconds();
+      reDraw();
+      ticks = 0;
+    }
+    ticks++;
 }
 
 function draw(time, deg, color, radius)
@@ -48,77 +45,9 @@ function draw(time, deg, color, radius)
 function reDraw()
 {
   context.clearRect(0, 0, canvas.width, canvas.height);
-  draw(mSeconds, (180 / Math.PI), '#FFFFFF', 150);
-  draw(seconds, (180 / Math.PI), '#BDD9BF', 200);
-  draw(minutes, (180 / Math.PI), '#FFC857', 250);
-  draw(hours, (180 / Math.PI), '#2E4052', 300);
+  draw(seconds, (6 * (Math.PI / 180)), '#BDD9BF', 200);
+  draw(minutes, (6 * (Math.PI / 180)), '#FFC857', 250);
+  draw(hours, (15 * (Math.PI / 180)), '#2E4052', 300);
 }
 
 update();
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*draw();
-context.fillStyle = "#FF0000";
-context.fillRect(x + px, y + py, 90, 90);
-
-function move(event)
-{
-  switch(event.keyCode)
-  {
-    case 119:
-      y -= 90;
-      py--;
-      console.log('up');
-      break;
-    case 115:
-      y += 90;
-      py++;
-      console.log('down');
-      break;
-    case 100:
-      x += 90;
-      px++;
-      console.log('right');
-      break;
-    case 97:
-      x -= 90;
-      px--;
-      console.log('left');
-      break;
-  }
-  context.clearRect(0,0, canvas.width, canvas.height);
-  draw();
-  context.fillStyle = "#FF0000";
-  context.fillRect(x + px, y + py, 90, 90);
-}
-
-function draw()
-{
-
-}*/
