@@ -23,7 +23,7 @@ function update()
 {
   requestAnimationFrame(update);
 
-  if(ticks === 10)
+  if(ticks === 60)
   {
     date = new Date();
     hours = date.getHours();
