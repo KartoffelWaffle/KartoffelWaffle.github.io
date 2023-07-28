@@ -1,6 +1,6 @@
 let canvas = document.getElementById("myCanvas");
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
+canvas.width = window.innerWidth - 8;
+canvas.height = window.innerHeight - 8; // Margin buffer ):
 let context = canvas.getContext("2d", {antialias: true});
 
 let date = new Date();
