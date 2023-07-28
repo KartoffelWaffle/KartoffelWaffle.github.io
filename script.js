@@ -46,9 +46,9 @@ function draw(time, deg, color, radius)
 function reDraw()
 {
   context.clearRect(0, 0, canvas.width, canvas.height);
-  draw(seconds, (6 * (Math.PI / 180)), 'red', 200);
-  draw(minutes, (6 * (Math.PI / 180)), 'green', 250);
-  draw(hours, (15 * (Math.PI / 180)), 'blue', 300);
+  draw(seconds, ((180 / Math.PI)), 'red', 200);
+  draw(minutes, ((180 / Math.PI)), 'green', 250);
+  draw(hours, ((180 / Math.PI)), 'blue', 300);
 }
 
 update();
