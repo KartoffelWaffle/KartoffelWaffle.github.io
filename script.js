@@ -47,7 +47,7 @@ function reDraw()
   context.clearRect(0, 0, canvas.width, canvas.height);
   draw(seconds, (6 * (Math.PI / 180)), '#BDD9BF', 200);
   draw(minutes, (6 * (Math.PI / 180)), '#FFC857', 250);
-  draw(hours, (15 * (Math.PI / 180)), '#2E4052', 300);
+  draw(hours, (15 * (Math.PI / 180)), '#1676C0', 300);
 }
 
 update();
