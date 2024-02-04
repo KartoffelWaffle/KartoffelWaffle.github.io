@@ -1,6 +1,6 @@
 let canvas = document.getElementById("myCanvas");
-canvas.width = window.innerWidth - 8;
-canvas.height = window.innerHeight - 8; // Margin buffer ):
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight; // Margin buffers annoy me... Can we have 0 at default CSS? ):
 let context = canvas.getContext("2d", {antialias: true});
 
 let date = new Date();
